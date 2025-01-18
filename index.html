@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="https://codehs.com/uploads/edc113e29e4918ba53cb54b6c72442e7">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            background: linear-gradient(45deg, rgba(30, 30, 30, 0.9), rgba(50, 50, 50, 0.9));
+            background-size: 400% 400%;
+            animation: gradientMove 10s infinite alternate;
+            color: #0f0;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .container { 
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+        }
+        h1, .random-message, .button {
+            text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0;
+        }
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0; }
+            100% { text-shadow: 0 0 20px #0f0, 0 0 30px #0f0, 0 0 50px #0f0; }
+        }
+        .random-message {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1em;
+            font-weight: bold;
+            color: #0f0;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #0f0;
+            border-radius: 10px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: #0f0;
+            color: #000;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Retarded V4</h1>
+        <div class="random-message" id="randomMessage"></div>
+        <div class="button" onclick="location.href='games.html'">Enter</div>
+<div class="button" onclick="location.href='https://retardedforums.freeflarum.com/'">Forums</div>
+<br>
+<div class="button" onclick="location.href='partner.html'">Partners</div>
+
+</div>
+    <script>
+        const messages = [
+            "Game on, legend!",
+            "Unleash the beast!",
+            "No limits, just play!",
+            "Born to game!",
+            "Arcade insanity begins now!",
+            "Credit to Orbit games  like a lot!",
+        ];
+        document.getElementById("randomMessage").innerText = messages[Math.floor(Math.random() * messages.length)];
+        
+    </script>
+    <br>
+    <div id="sfc244l5fnr7hs9hkjmfrnatrfk7519e6ay"></div>
+<script type="text/javascript" src="https://counter6.optistats.ovh/private/counter.js?c=244l5fnr7hs9hkjmfrnatrfk7519e6ay&down=async" async></script>
+</body>
+</html>
