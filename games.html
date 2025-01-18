@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="icon" href="https://codehs.com/uploads/edc113e29e4918ba53cb54b6c72442e7">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #000, #222);
+            background-size: 400% 400%;
+            animation: gradientMove 5s infinite alternate;
+            color: #0f0;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .container {
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 30px #0f0;
+            width: 90%;
+        }
+        h1 {
+            font-size: 4em;
+            text-shadow: 0 0 30px #0f0, 0 0 60px #0f0;
+            margin-bottom: 20px;
+        }
+        .games-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .game-card {
+            width: 280px;
+            height: 180px;
+            background: rgba(0, 0, 0, 0.95);
+            border: 4px solid #0f0;
+            border-radius: 15px;
+            padding: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .game-card:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 35px #0f0;
+        }
+        .game-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .game-title {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 5px 10px;
+            font-size: 1.5em;
+            border-radius: 10px;
+            text-shadow: 0 0 15px #0f0;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 20px 50px;
+            font-size: 1.5em;
+            color: #0f0;
+            background: black;
+            border: 4px solid #0f0;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: #0f0;
+            color: black;
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Games</h1>
+        <div class="games-grid">
+            <div class="game-card" onclick="openGame('https://example.com/game1')">
+                <img src="https://via.placeholder.com/280x180" alt="Game 1">
+                <div class="game-title">Game 1</div>
+            </div>
+            <div class="game-card" onclick="openGame('https://example.com/game2')">
+                <img src="https://via.placeholder.com/280x180" alt="Game 2">
+                <div class="game-title">Game 2</div>
+            </div>
+            <div class="game-card" onclick="openGame('https://example.com/game3')">
+                <img src="https://via.placeholder.com/280x180" alt="Game 3">
+                <div class="game-title">Game 3</div>
+            </div>
+        </div>
+        <div class="button" onclick="location.href='index.html'">Back</div>
+    </div>
+    <script>
+        function openGame(url) {
+            let gameWindow = window.open('about:blank', '_blank');
+            let iframe = gameWindow.document.createElement('iframe');
+            iframe.style.width = '100vw';
+            iframe.style.height = '100vh';
+            iframe.style.border = 'none';
+            iframe.src = url;
+            gameWindow.document.body.style.margin = '0';
+            gameWindow.document.body.style.overflow = 'hidden';
+            gameWindow.document.body.appendChild(iframe);
+        }
+    </script>
+</body>
+</html>
